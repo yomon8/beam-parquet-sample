@@ -30,6 +30,7 @@
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
     <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
     <slf4j.version>1.7.25</slf4j.version>
+    <hadoop-client.version>3.2.1</hadoop-client.version>
   </properties>
 
   <repositories>
@@ -105,5 +106,33 @@
       <artifactId>slf4j-jdk14</artifactId>
       <version>${slf4j.version}</version>
     </dependency>
+
+    <!-- for AWS S3 output -->
+    <dependency>
+      <groupId>org.apache.beam</groupId>
+      <artifactId>beam-sdks-java-io-amazon-web-services</artifactId>
+      <version>${beam.version}</version>
+    </dependency>
+
+    <!-- for GCP GCS output -->
+    <dependency>
+      <groupId>org.apache.beam</groupId>
+      <artifactId>beam-runners-google-cloud-dataflow-java</artifactId>
+      <version>${beam.version}</version>
+    </dependency>
+
+    <!-- for transformation to Parquet -->
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-client</artifactId>
+      <version>${hadoop-client.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.beam</groupId>
+      <artifactId>beam-sdks-java-io-parquet</artifactId>
+      <version>${beam.version}</version>
+    </dependency>
+
   </dependencies>
 </project>
